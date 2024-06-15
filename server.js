@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const Detail = require('./models/Details');
-const uri = "mongodb+srv://Ishwarya:TouchGovernance@emaildetails.c2n3gcc.mongodb.net/?retryWrites=true&w=majority&appName=emailDetails";
+const uri = "mongodb+srv://Ishwarya:TouchGovernance@emaildetails.c2n3gcc.mongodb.net/?retryWrites=true&w=majority&ssl=true&appName=emailDetails";
 
 
 const app = express();
@@ -16,8 +16,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+    ssl: true,
 });
 
 const db = mongoose.connection;
